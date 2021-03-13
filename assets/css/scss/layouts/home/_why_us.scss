@@ -1,0 +1,59 @@
+/* ######################### Home Page Why Us ######################### */
+
+.why-us {
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px $main_color solid;
+      border-radius: 10px;
+      width: 32%;
+      padding: 20px;
+      transition: .3s all ease-in-out;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 0 5px lighten($color: $main_color, $amount: 30);
+      }
+
+      .icon {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        border: 1px $main_color solid;
+        margin-bottom: 20px;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $main_color;
+      }
+
+      .para {
+        text-align: justify;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .why-us {
+
+    .container {
+      flex-wrap: wrap;
+
+      .box {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

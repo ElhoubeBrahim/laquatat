@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@import 'scss/helpers/fonts';
+@import 'scss/helpers/variables';
+
+@import 'scss/grid/normalize';
+@import 'scss/grid/global';
+
+@import 'scss/layouts/header';
+@import 'scss/layouts/sidebar';
+@import 'scss/layouts/footer';
+
+@import 'scss/pages/home';
+@import 'scss/layouts/home/intro';
+@import 'scss/layouts/home/why_us';
+@import 'scss/layouts/home/questions';
+@import 'scss/layouts/home/testimonials';
+
+@import 'scss/pages/explore';
+@import 'scss/pages/login';
+@import 'scss/pages/profile';
+@import 'scss/pages/new_post';
+@import 'scss/pages/settings';

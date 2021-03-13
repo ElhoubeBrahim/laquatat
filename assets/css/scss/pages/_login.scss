@@ -1,0 +1,157 @@
+/* ######################### Login & Register Page ######################### */
+
+.login-form,
+.register-form {
+  width: 70%;
+  margin: 100px auto;
+
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    color: $main_color;
+  }
+}
+
+.login-form {
+
+  form {
+
+    .forget {
+      color: lighten($color: $main_color, $amount: 20);
+      font-size: 1rem;
+      padding: 0 10px;
+      text-decoration: underline;
+      transition: .3s all ease-in-out;
+
+      &:hover,
+      &:focus {
+        color: $main_color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.register-form {
+
+  form {
+
+    .top-side {
+      display: grid;
+      grid-template-columns: 200px auto;
+      grid-gap: 20px;
+      align-items: center;
+
+      textarea {
+        height: 250px;
+        max-height: 300px;
+      }
+
+      .picture {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: #ddd;
+        cursor: pointer;
+        overflow: hidden;
+
+        img {
+          position: relative;
+          transition: .2s all ease-in-out;
+          z-index: 1;
+
+          &.square {
+            height: 100%;
+            width: 100%;
+          }
+
+          &.rectangle-1 {
+            height: 100%;
+            width: auto;
+          }
+
+          &.rectangle-2 {
+            height: auto;
+            width: 100%;
+          }
+        }
+
+        .upload {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          i {
+            font-size: 5rem;
+            position: relative;
+            z-index: 0;
+          }
+
+          input[type=file] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1;
+          }
+        }
+      }
+
+      .input-gp {
+        position: relative;
+      }
+    }
+
+    .input-radio-gp {
+      padding: 20px 0;
+
+      .required {
+        color: $red_color;
+      }
+
+      label {
+        margin: 0 10px;
+        cursor: pointer;
+
+        input[type=radio]:checked+span {
+          color: $main_color;
+        }
+
+        input[type=radio] {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+
+  .login-form,
+  .register-form {
+    width: 95%;
+  }
+
+  .register-form {
+    form {
+
+      .top-side {
+        grid-template-columns: 100%;
+
+        .picture {
+          margin: 10px auto;
+        }
+      }
+    }
+  }
+}

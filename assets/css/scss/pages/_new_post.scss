@@ -1,0 +1,140 @@
+/* ######################### Add Post Page ######################### */
+
+.add-post,
+.edit-post {
+  padding: 30px 0;
+
+  main.container {
+
+    .title {
+      font-size: 2rem;
+      text-align: center;
+      color: $main_color;
+    }
+
+    .upload {
+      position: relative;
+      height: 300px;
+      width: 50%;
+      margin: 0 auto;
+      border-radius: 5px;
+      background-color: #ddd;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      margin: 20px auto;
+
+      img {
+        position: relative;
+        transition: .2s all ease-in-out;
+        z-index: 1;
+      }
+
+      .upload-form {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          font-size: 10rem;
+          position: relative;
+          z-index: 0;
+        }
+
+        input[type=file] {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          opacity: 0;
+          cursor: pointer;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .error {
+        color: red;
+        text-align: center;
+        margin-top: 80px;
+        font-size: 1.5rem;
+      }
+    }
+
+    form {
+      margin-bottom: 50px;
+
+      input,
+      textarea,
+      select,
+      .input-radio-gp {
+        margin: 10px 0;
+      }
+
+      textarea {
+        resize: vertical;
+        max-height: 300px;
+        height: 250px;
+      }
+
+      .input-radio-gp {
+
+        label {
+          margin: 0 10px;
+          cursor: pointer;
+
+          input[type=radio]:checked+span {
+            color: $main_color;
+          }
+        }
+      }
+
+      button[type=submit] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        padding: 10px;
+        width: 100%;
+        background-color: #44afe3;
+        color: #fff;
+        border: 1px #44afe3 solid;
+        box-shadow: 0 3px 0 1px #dff1fa;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s all ease-in-out;
+
+        i {
+          margin: 0 15px;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          box-shadow: none;
+          background-color: darken($color: $main_color, $amount: 10);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+
+  .add-post,
+  .edit-post {
+    main.container {
+
+      .upload {
+        width: 100%;
+      }
+    }
+  }
+}

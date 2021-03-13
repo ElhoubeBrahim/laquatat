@@ -1,0 +1,161 @@
+/* ######################### Settings Page ######################### */
+
+.settings {
+  padding-top: 50px;
+
+  main.container {
+
+    .navigate-settings {
+
+      ul {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border: 1px #ddd solid;
+
+        li {
+
+          a {
+            display: block;
+            padding: 5px 20px;
+            transition: .3s all ease-in-out;
+            cursor: pointer;
+
+            &:hover,
+            &:active,
+            &:focus {
+              color: $main_color;
+            }
+          }
+
+          &.active {
+
+            a {
+              color: $main_color;
+            }
+          }
+        }
+      }
+    }
+
+    .settings-list {
+      margin-top: 15px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 100px;
+
+      .pictures {
+        position: relative;
+        margin-bottom: 50px;
+
+        .cover-picture {
+          height: 300px;
+          border-radius: 5px;
+          overflow: hidden;
+          background-color: #000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .profile-picture {
+          height: 200px;
+          width: 200px;
+          border-radius: 50%;
+          border: 2px #fff solid;
+          overflow: hidden;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .change-cover {
+        position: absolute;
+        left: 10px;
+        transform: translate(0, -125%);
+        background-color: #fff;
+        border: 1px #000 solid;
+        box-shadow: 0 0 5px #666;
+        width: 200px;
+        cursor: pointer;
+
+        input[type=file] {
+          opacity: 0;
+          height: 100%;
+          width: 100%;
+          cursor: pointer;
+        }
+
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -10;
+          text-align: center;
+        }
+      }
+
+      .change-profile {
+        position: absolute;
+        left: 50%;
+        bottom: -150px;
+        transform: translate(-50%);
+        background-color: #fff;
+        border: 1px #000 solid;
+        width: 200px;
+        cursor: pointer;
+
+        input[type=file] {
+          opacity: 0;
+          height: 100%;
+          width: 100%;
+          cursor: pointer;
+        }
+
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: -10;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+
+      form.settings-form {
+        padding: 0;
+        margin: 0;
+        border: none;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+
+        &#account {
+
+          button[type=submit] {
+            background-color: $red_color;
+            border: 1px $red_color solid;
+            box-shadow: 0 3px 0 1px lighten($color: $red_color, $amount: 35);
+
+            &:hover,
+            &:focus {
+              background-color: darken($color: $red_color, $amount: 10);
+              box-shadow: none;
+            }
+          }
+        }
+
+        .input-gp {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}

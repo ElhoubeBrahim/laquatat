@@ -1,0 +1,55 @@
+/* ######################### Home Page Questions ######################### */
+
+.questions {
+  background-color: #f5f5f5;
+
+  .container {
+
+    .question {
+
+      .header {
+        padding: 15px 20px;
+        background-color: $main_color;
+        border: 1px #f5f5f5 solid;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        transition: .3s all ease-in-out;
+
+        i {
+          transition: .3s all ease-in-out;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: lighten($color: $main_color, $amount: 10);
+        }
+      }
+
+      .content {
+        padding: 0 20px;
+        height: 0;
+        overflow: hidden;
+        transition: .3s all ease-in-out;
+      }
+
+      &.active {
+
+        .header {
+          background-color: darken($color: $main_color, $amount: 10);
+
+          i {
+            transform: rotate(-180deg);
+          }
+        }
+
+        .content {
+          padding: 20px;
+          height: max-content;
+        }
+      }
+    }
+  }
+}

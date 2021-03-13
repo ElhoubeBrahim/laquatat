@@ -1,0 +1,66 @@
+/* ######################### Navigation Side Bar ######################### */
+
+aside.sidebar {
+  width: 20%;
+  background-color: #eee;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  nav {
+
+    li {
+
+      a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px #ddd solid;
+        transition: .3s all ease-in-out;
+
+        i {
+          transition: .3s all ease-in-out;
+          transform: translateX(5px);
+        }
+
+        &:hover,
+        &:active {
+          background-color: #fafafa;
+
+          i {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .fixed main.container {
+    width: 100%;
+  }
+
+  aside.sidebar {
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    padding-top: 50px;
+
+    nav li:first-child {
+      border-top: 1px #ddd solid;
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+}

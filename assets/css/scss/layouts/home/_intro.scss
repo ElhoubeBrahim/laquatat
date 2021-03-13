@@ -1,0 +1,124 @@
+/* ######################### Home Page Intro ######################### */
+
+.intro {
+  padding: 70px 0;
+  background-color: $main_color;
+  color: #fff;
+  box-shadow: inset 0 5px 5px darken($color: $main_color, $amount: 10);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .slider {
+      position: relative;
+      width: 55%;
+      height: 500px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: none;
+        opacity: 0;
+
+        &.active {
+          display: block;
+          animation-name: fade;
+          animation-duration: .5s;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    .content {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .welcome {
+        font-weight: lighter;
+        margin: 0;
+        font-size: 3rem;
+      }
+
+      .description {
+        font-weight: lighter;
+        font-size: 1.5rem;
+      }
+
+      .buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+
+        button {
+          border-radius: 5px;
+          margin-inline-end: 10px;
+          transition: .3s all ease-in-out;
+
+          a {
+            display: block;
+            padding: 10px 20px;
+          }
+
+          &.explore-btn {
+            background-color: #fff;
+            color: #444;
+            border: 1px #fff solid;
+
+            &:hover,
+            &:focus {
+              background-color: $main_color;
+              color: #fff;
+            }
+          }
+
+          &.login-btn {
+            background-color: darken($color: $main_color, $amount: 10);
+            color: #fff;
+            border: 1px #fff solid;
+            transform: scale(1.1);
+
+            &:hover,
+            &:focus {
+              background-color: darken($color: $main_color, $amount: 30);
+              border-color: darken($color: $main_color, $amount: 10);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@media (max-width: 992px) {
+  .intro {
+    padding: 100px 0;
+
+    .container {
+      justify-content: center;
+
+      .slider {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+/* ######################### Footer ######################### */
+
+footer.footer {
+  color: #aaa;
+
+  .top-side {
+    background-color: #444;
+    padding: 50px 0;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .brand {
+        font-size: 3rem;
+      }
+
+      ul.footer-links {
+        display: flex;
+        align-items: center;
+        border-top: 1px #ddd solid;
+        border-bottom: 1px #ddd solid;
+
+        li {
+
+          a {
+            display: block;
+            padding: 5px 20px;
+            transition: .3s all ease-in-out;
+
+            &:hover {
+              text-decoration: underline;
+              color: #ddd;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-side {
+    padding: 5px 0;
+    background-color: #222;
+    color: #555;
+    font-size: 1rem;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

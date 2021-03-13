@@ -1,0 +1,148 @@
+/* ######################### Header ######################### */
+
+header.header {
+  background-color: #fff;
+  border-bottom: 1px #ddd solid;
+  box-shadow: 0 0 5px #aaa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .brand {
+      font-size: 2rem;
+      height: 100%;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      button {
+        border-radius: 5px;
+        margin: 5px 10px;
+        cursor: pointer;
+        transition: .3s all ease-in-out;
+
+        a {
+          display: block;
+          padding: 7px 30px;
+        }
+
+        &.login {
+          background-color: transparent;
+          border: 1px #ddd solid;
+
+          &:hover,
+          &:focus {
+            background-color: #f5f5f5;
+            border-color: #f5f5f5;
+          }
+        }
+
+        &.signup {
+          background-color: $main_color;
+          color: #fff;
+          border: 1px transparent solid;
+          box-shadow: 0 2px 0 1px lighten($color: $main_color, $amount: 35);
+
+          &:hover,
+          &:focus {
+            background-color: darken($color: $main_color, $amount: 10);
+            box-shadow: none;
+          }
+        }
+      }
+    }
+
+    .user-actions {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      li {
+        margin: 0 5px;
+        cursor: pointer;
+        padding: 10px;
+        border: 1px #ddd solid;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: .3s all ease-in-out;
+
+        a {
+          display: block;
+        }
+
+        img {
+          height: 50px;
+          width: 50px;
+        }
+
+        &.account:hover {
+          border: none;
+
+          img {
+            transform: scale(1.1);
+          }
+        }
+
+        &.logout:hover {
+          background-color: $red_color;
+          color: #fff;
+          border: none;
+        }
+
+        &.menu {
+          display: none;
+        }
+
+        &.menu:hover {
+          background-color: $main_color;
+          color: #fff;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  header.header {
+    background-color: #fff;
+    border-bottom: 1px #ddd solid;
+    padding: 10px;
+
+    .container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .brand {
+        margin-bottom: 20px;
+      }
+
+      .user-actions li.menu {
+        display: flex;
+      }
+    }
+  }
+
+}

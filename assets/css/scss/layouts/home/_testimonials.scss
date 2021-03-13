@@ -1,0 +1,143 @@
+/* ######################### Home Page Testimonials ######################### */
+
+.testimonials {
+
+  .container {
+
+    .content {
+      position: relative;
+      height: 250px;
+
+      .testimonial {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px #ddd solid;
+        border-radius: 10px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        z-index: -9;
+        transition: .5s all ease-in-out;
+
+        &.active {
+          opacity: 1;
+          z-index: 1;
+        }
+
+        .picture {
+          position: relative;
+          width: 40%;
+          height: 100%;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+          .info {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: max-content;
+
+            .name,
+            .job {
+              background-color: #fff;
+              margin: 5px;
+              padding: 0 10px;
+            }
+
+            .name {
+              font-size: 1.2rem;
+            }
+          }
+        }
+
+        .quote {
+          width: 60%;
+          padding: 10px 30px;
+        }
+
+        .m-info {
+          display: none;
+        }
+      }
+    }
+
+    .dots {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+
+      .dot {
+        display: block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: lighten($color: $main_color, $amount: 20);
+        margin: 0 5px;
+        cursor: pointer;
+
+        &.active {
+          background-color: darken($color: $main_color, $amount: 20);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .testimonials {
+
+    .container {
+
+      .content {
+
+        .testimonial {
+          flex-direction: column;
+
+          .picture {
+            display: none;
+          }
+
+          .quote {
+            height: 100%;
+            width: 100%;
+            border-bottom: 1px #ddd solid;
+          }
+
+          .m-info {
+            display: flex;
+            text-align: center;
+            font-size: 1rem;
+            color: #bbb;
+            width: 100%;
+            height: 60px;
+
+            .name,
+            .job {
+              padding: 5px 10px;
+              width: 50%;
+            }
+
+            .name {
+              border-inline-end: 1px #ddd solid;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

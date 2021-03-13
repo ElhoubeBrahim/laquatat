@@ -1,0 +1,206 @@
+/* ######################### Explore Page ######################### */
+
+.explore {
+
+  main.container {
+    padding-top: 20px;
+
+    .categories {
+
+      .glider-track {
+        min-width: 1000px !important;
+        width: max-content !important;
+
+        .glider-slide {
+          min-width: 100px !important;
+          width: max-content !important;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin: 20px 0;
+
+      .add-post {
+        display: block;
+        border: 1px transparent solid;
+        padding: 5px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: green;
+        color: #fff;
+        transition: .3s all ease-in-out;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: lighten($color: green, $amount: 10);
+        }
+      }
+    }
+
+    .posts {
+      padding: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 20px 0;
+
+      .post {
+        width: 31%;
+        margin: 0 1%;
+        margin-bottom: 20px;
+
+        .picture {
+          position: relative;
+          overflow: hidden;
+          height: 300px;
+          border: 1px #ddd solid;
+          border-radius: 5px;
+          padding: 3px;
+          cursor: pointer;
+          transition: .3s all ease-in-out;
+
+          &:hover,
+          &:active,
+          &:focus {
+            box-shadow: 0 0 0 5px lighten($color: $main_color, $amount: 15);
+            border-color: transparent;
+
+            .tools {
+
+              li {
+                transform: scale(1);
+              }
+            }
+          }
+
+          img {
+            border-radius: 5px;
+          }
+
+          .tools {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+
+            li {
+              margin: 0 10px;
+              height: 40px;
+              width: 40px;
+              border-radius: 50%;
+              background-color: $main_color;
+              color: #fff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.3rem;
+              box-shadow: 0 0 5px #aaa;
+              transform: scale(0);
+              transition: .3s all ease-in-out;
+
+              &:hover,
+              &:active,
+              &:focus {
+                background-color: lighten($color: $main_color, $amount: 10);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .no-post {
+      text-align: center;
+      width: 100%;
+      font-size: 4rem;
+      padding: 20px 50px;
+      color: #ddd;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .explore {
+
+    main.container {
+
+      .actions {
+        padding: 0 5px;
+      }
+
+      .posts {
+
+        .post {
+          width: 100%;
+
+          .picture {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            border: 1px #ddd solid;
+            border-radius: 5px;
+            padding: 3px;
+            cursor: pointer;
+            transition: .3s all ease-in-out;
+
+            &:hover,
+            &:active,
+            &:focus {
+              box-shadow: 0 0 0 5px lighten($color: $main_color, $amount: 15);
+              border-color: transparent;
+
+              .tools {
+
+                li {
+                  transform: scale(1);
+                }
+              }
+            }
+
+            img {
+              border-radius: 5px;
+            }
+
+            .tools {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              display: flex;
+              align-items: center;
+
+              li {
+                margin: 0 10px;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background-color: $main_color;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3rem;
+                box-shadow: 0 0 5px #aaa;
+                transform: scale(0);
+                transition: .3s all ease-in-out;
+
+                &:hover,
+                &:active,
+                &:focus {
+                  background-color: lighten($color: $main_color, $amount: 10);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

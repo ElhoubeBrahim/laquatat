@@ -1,0 +1,327 @@
+/* ######################### User Profile Page ######################### */
+
+.profile {
+
+  main.container {
+    padding: 20px;
+
+    .user-profile {
+      border-radius: 10px;
+      margin-bottom: 50px;
+      overflow: hidden;
+      border: 1px #ddd solid;
+
+      .cover-picture {
+        height: 250px;
+        overflow: hidden;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .user-info {
+        position: relative;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-gap: 20px;
+        align-items: center;
+
+        .picture {
+          border-radius: 50%;
+          height: 200px;
+          width: 200px;
+          overflow: hidden;
+        }
+
+        .info {
+
+          .username {
+            font-size: 2rem;
+            text-align: center;
+          }
+
+          .bio {
+            line-height: 1.2;
+            margin: 0 10px;
+            border: 1px #ddd solid;
+            border-radius: 5px;
+            padding: 10px;
+          }
+
+          ul.socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            li {
+              padding: 2px 10px;
+              font-size: 1.5rem;
+
+              a {
+                transition: .2s all ease-in-out;
+
+                &:hover,
+                &:active,
+                &:focus {
+                  color: $main_color;
+                }
+              }
+            }
+          }
+        }
+
+        .likes {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
+
+          i {
+            color: $red_color;
+          }
+
+          .nth-likes {
+            position: relative;
+            padding: 0 10px;
+            background-color: $red_color;
+            color: #fff;
+            margin-left: 15px;
+            border-radius: 5px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              left: -20px;
+              border: 10px transparent solid;
+              border-right-color: $red_color;
+            }
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        border-top: 1px #ddd solid;
+
+        .action {
+          width: 33.3333%;
+          padding: 10px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: .3s all ease-in-out;
+
+          &.like.liked {
+            background-color: #ec4e4b;
+            color: #fff;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: #eee;
+          }
+
+          i {
+            margin-inline-end: 20px;
+          }
+
+          &:nth-child(2) {
+            border-left: 1px #ddd solid;
+            border-right: 1px #ddd solid;
+          }
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      .search {
+        display: flex;
+        justify-content: end;
+        position: relative;
+
+        input {
+          padding: 5px 10px;
+          border-radius: 5px;
+          border: 1px #ddd solid;
+        }
+
+        i {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 10px;
+        }
+      }
+
+      .add-post {
+        display: block;
+        border: 1px transparent solid;
+        padding: 5px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: green;
+        color: #fff;
+        transition: .3s all ease-in-out;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: lighten($color: green, $amount: 10);
+        }
+      }
+    }
+
+    .posts {
+      padding: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      .post {
+        position: relative;
+        overflow: hidden;
+        width: 31%;
+        margin: 0 1%;
+        margin-bottom: 20px;
+        height: 250px;
+        border: 1px #ddd solid;
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+        transition: .3s all ease-in-out;
+
+        &:hover,
+        &:active,
+        &:focus {
+          box-shadow: 0 0 0 5px lighten($color: $main_color, $amount: 15);
+          border-color: transparent;
+
+          .tools {
+
+            li {
+              transform: scale(1);
+            }
+          }
+        }
+
+        img {
+          border-radius: 5px;
+        }
+
+        .tools {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          display: flex;
+          align-items: center;
+
+          li {
+            margin: 0 10px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: $main_color;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+            box-shadow: 0 0 5px #aaa;
+            transform: scale(0);
+            transition: .3s all ease-in-out;
+
+            &:hover,
+            &:active,
+            &:focus {
+              background-color: lighten($color: $main_color, $amount: 10);
+            }
+          }
+        }
+      }
+
+      .no-post {
+        text-align: center;
+        width: 100%;
+        font-size: 4rem;
+        padding: 20px 50px;
+        color: #ddd;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .profile {
+
+    main.container {
+      padding: 0;
+
+      .user-profile {
+        border-radius: 0;
+        border: none;
+
+        .user-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-bottom: 50px;
+
+          .picture {
+            margin-top: -100px;
+          }
+
+          .info {
+
+            .username {
+              margin-top: -20px;
+              font-size: 1.5rem;
+            }
+
+          }
+        }
+
+        .actions {
+          border-top: 1px #ddd solid;
+          border-bottom: 1px #ddd solid;
+          flex-wrap: wrap;
+
+          .action {
+            width: 100%;
+            border: none;
+
+            &:not(:last-child) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .actions {
+        padding: 0 5px;
+      }
+
+      .posts {
+
+        .post {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
